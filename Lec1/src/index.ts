@@ -48,7 +48,9 @@ boolList.push(4)
 
 //Tuple 
 let tuple : [string, number];  //fixing length and giving type to each as well
+let tuple1 : [string, boolean];  //fixing length and giving type to each as well
 tuple = ["hello", 10]
+tuple1 = ["hello", true]
 // tuple = ["hello", "10"] error
 
 tuple[0].substring(1);
@@ -64,6 +66,13 @@ enum color{
     Yellow,
     Blue = "Blue",
     // Pink error
+}
+
+enum demo {
+    User,
+    SuperUser,
+    Admin,
+    SuperAdmin
 }
 
 let i: color = 1;
@@ -93,6 +102,18 @@ function sum(a: number,b) : void {
 sum(3, 4);
 sum(5, "3")  //correct
 sum(3, "a")// complation error
+
+function prd(x: number, y: number) : number {
+    return x*y;
+}
+
+function div(x: number, y: number) : number {
+    return x/y;
+}
+
+function show(name: string) : void {
+    console.log(name)
+}
 
 //Any
 // let value: any;
