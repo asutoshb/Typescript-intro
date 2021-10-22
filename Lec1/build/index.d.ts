@@ -8,11 +8,18 @@ declare let stringList: string[];
 declare let aa: number[];
 declare let boolList: Array<number>;
 declare let tuple: [string, number];
+declare let tuple1: [string, boolean];
 declare enum color {
     Red = 0,
     Green = 2,
     Yellow = 3,
     Blue = "Blue"
+}
+declare enum demo {
+    User = 0,
+    SuperUser = 1,
+    Admin = 2,
+    SuperAdmin = 3
 }
 declare let i: color;
 declare let i1: color;
@@ -20,6 +27,9 @@ declare let u: undefined;
 declare let n: null;
 declare function l(): Function;
 declare function sum(a: number, b: any): void;
+declare function prd(x: number, y: number): number;
+declare function div(x: number, y: number): number;
+declare function show(name: string): void;
 declare let g: Record<string, number[]>;
 interface IButton {
     label: string;
@@ -78,3 +88,31 @@ interface ErrorA {
     b: number;
 }
 declare let IState: Loading & ErrorA;
+interface forObject {
+    title: string;
+    status: boolean;
+    id: number;
+}
+interface INameProps {
+    firstname: string;
+    lastname?: string;
+}
+declare const getName: ({ firstname, lastname }: INameProps) => string;
+interface IAddress {
+    houseNumber: number;
+    street: string;
+    city: string;
+    postalCode: number;
+    country: string;
+}
+interface PersonDetails {
+    prefix?: string;
+    phones: number;
+    addresses: IAddress[];
+    firstname: string;
+    lastname: string;
+    middlename?: string;
+}
+declare const allpersons: any[];
+declare const phonebook: (obj: PersonDetails) => void;
+declare const value1: PersonDetails;

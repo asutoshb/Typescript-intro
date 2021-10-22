@@ -31,7 +31,9 @@ let boolList = [1, 2, 3];
 boolList.push(4);
 //Tuple 
 let tuple; //fixing length and giving type to each as well
+let tuple1; //fixing length and giving type to each as well
 tuple = ["hello", 10];
+tuple1 = ["hello", true];
 // tuple = ["hello", "10"] error
 tuple[0].substring(1);
 // tuple[1].substring(1);  // error
@@ -46,6 +48,13 @@ var color;
     color["Blue"] = "Blue";
     // Pink error
 })(color || (color = {}));
+var demo;
+(function (demo) {
+    demo[demo["User"] = 0] = "User";
+    demo[demo["SuperUser"] = 1] = "SuperUser";
+    demo[demo["Admin"] = 2] = "Admin";
+    demo[demo["SuperAdmin"] = 3] = "SuperAdmin";
+})(demo || (demo = {}));
 let i = 1;
 let i1 = color.Red; //i1 = 2
 //Null undefined
@@ -66,6 +75,15 @@ function sum(a, b) {
 sum(3, 4);
 sum(5, "3"); //correct
 sum(3, "a"); // complation error
+function prd(x, y) {
+    return x * y;
+}
+function div(x, y) {
+    return x / y;
+}
+function show(name) {
+    console.log(name);
+}
 //Any
 // let value: any;
 // value = 5;
@@ -122,4 +140,29 @@ IState = {
     a: "loading",
     b: 200,
 };
+const getName = ({ firstname, lastname }) => {
+    if (lastname)
+        return firstname + ' ' + lastname;
+    return firstname;
+};
+const allpersons = Array();
+const phonebook = (obj) => {
+    allpersons.push(obj);
+};
+const value1 = {
+    phones: 233434234,
+    addresses: [
+        {
+            houseNumber: 234,
+            street: "adf",
+            city: "bbsr",
+            postalCode: 34234,
+            country: "usa",
+        }
+    ],
+    firstname: "jethalal",
+    lastname: "gada"
+};
+phonebook(value1);
+console.log(allpersons);
 //# sourceMappingURL=index.js.map

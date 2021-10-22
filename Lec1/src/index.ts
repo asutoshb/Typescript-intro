@@ -271,3 +271,62 @@ let IState : Loading & ErrorA  ;
         b : 200,
     }
 
+
+
+    //------------------------------------------------------------
+
+    interface forObject {
+    title: string;
+    status: boolean;
+    id: number;
+}
+
+interface INameProps{
+    firstname: string;
+    lastname?: string;
+}
+
+const getName = ({firstname, lastname} : INameProps) : string => {
+    if(lastname) return firstname + ' ' + lastname;
+    return firstname;
+}
+
+interface IAddress {
+    houseNumber: number;
+    street: string;
+    city: string;
+    postalCode: number;
+    country: string;
+}
+
+interface PersonDetails{
+    prefix?: string;
+    phones: number;
+    addresses: IAddress[];
+    firstname: string;
+    lastname: string;
+    middlename?: string;
+}
+
+const allpersons = Array<any>();
+const phonebook = (obj : PersonDetails) : void => {
+    allpersons.push(obj);
+}
+
+const value1 : PersonDetails = {
+    phones: 233434234,
+    addresses: [
+        {
+            houseNumber: 234,
+            street: "adf",
+            city: "bbsr",
+            postalCode: 34234,
+            country: "usa",
+        }
+    ],
+    firstname: "jethalal",
+    lastname: "gada"
+}
+
+phonebook(value1);
+console.log(allpersons)
